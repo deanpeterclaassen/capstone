@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>I love Birds</title>
+</head>
+<header>Bird Watching List Maker</header>
+<body>
+    <nav>
+        <a href="days.html">Days</a>
+    </nav>
+    <div id="main">
+        <div id="input">
+            <form >
+                <label for=""></label>
+                <input type="text" id="name" placeholder="Name">
+            
+                <input type="text" id="date" placeholder="Date">
+                
+                <input type="text" id="weather" placeholder="Weather">
+                <input type="text" id="location1" placeholder="Location">
+                <input type="text" id="distance" placeholder="Distance">
+                <input type="text" id="duration" placeholder="Duration">
+                <button type="submit">Add Day</button>
+            </form>
+
+            
+        </div>
+        <div id="days"></div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
