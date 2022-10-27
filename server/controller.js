@@ -28,5 +28,15 @@ module.exports={
         sequelize.query(`select * from day;`)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log(err))
+    },
+    addSpecies: (req,res)=>{
+        const {species, quantity} = req.body
+        sequelize.query(`insert into species (species, quantity)
+        values ('${species}','${quantity}')
+        returning *;`)
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch(err => console.log(err))
+
     }
-}
+
+    }

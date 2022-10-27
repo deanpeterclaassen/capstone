@@ -14,7 +14,7 @@ form.addEventListener('submit',(e)=>{
         name: name.value,
         date: date.value,
         weather: weather.value,
-        location: location1.value,
+        location1: location1.value,
         distance: distance.value,
         duration: duration.value
     })
@@ -32,10 +32,8 @@ function getDays (){
         `<div id="dayCard">
             <h2>${day.name}</h2>
             <h3>${day.date}</h3>
-            <h3>${day.weather}</h3>
-            <h3>${day.location}</h3>
-            <h3>${day.duration}</h3>
-            <h3>${day.distance}</h3>
+            <p>${day.weather}, ${day.location}, ${day.duration}, ${day.distance}</p>
+
         </div>`
         daysInfo.innerHTML +=dayElement
         })

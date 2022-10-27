@@ -1,3 +1,5 @@
+let days = document.querySelector('#days')
+
 function getDays (){
     axios.get('/days')
     .then(res=>{
@@ -11,6 +13,7 @@ function getDays (){
             <h3>${day.duration}</h3>
             <h3>${day.distance}</h3>
         </div>`
+        days.innerHTML +=dayElement
         })
     })
 }

@@ -21,7 +21,7 @@ module.exports = {
         create table day (
             day_id serial primary key, 
             name varchar(100), 
-            date timestamp, 
+            date varchar(50), 
             weather varchar(50), 
             location varchar(50),
             distance float,
