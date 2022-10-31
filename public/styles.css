@@ -36,6 +36,17 @@ form{
    
    
 }
-#days{
+.daysShow{
+    display: flex;
     overflow: scroll;
+    height: 80vh;
+    width: 40vh;
+}
+
+.hide{
+    display: none;
+}
+
+#allDays{
+    display: flex;
 }

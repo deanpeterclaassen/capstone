@@ -20,18 +20,18 @@ module.exports = {
 
         create table day (
             day_id serial primary key, 
-            name varchar(100), 
-            date varchar(50), 
-            weather varchar(50), 
-            location varchar(50),
-            distance float,
-            duration float
+            name varchar(100) NOT NULL, 
+            date varchar(50) NOT NULL, 
+            weather varchar(50) NOT NULL, 
+            location varchar(50) NOT NULL,
+            distance float NOT NULL,
+            duration float NOT NULL
         );
         create table species (
-            species_id serial primary key,
-            day_id integer references day(day_id),
-            species varchar(50),
-            quantity integer
+            species_id serial primary key ,
+            day_id integer references day(day_id) NOT NULL,
+            species varchar(50)NOT NULL,
+            quantity integer NOT NULL
         );
 
         `)

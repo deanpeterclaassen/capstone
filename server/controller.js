@@ -25,18 +25,40 @@ module.exports={
 
     },
     getDays: (req,res)=>{
-        sequelize.query(`select * from day;`)
+        sequelize.query   (`select * from day;`)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log(err))
     },
+    getSpecificDay: (req,res)=>{
+        sequelize.query(`select * from day order by day_id DESC limit 1`)
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch(err => console.log(err))
+    },
+    getDayId: (req, res)=>{
+        const {name,date}= req.body
+        let day_id = sequelize.query(`select day_id from day
+        where name = '${name}' AND date = '${date}'; `)
+        .send(day_id)
+    },
     addSpecies: (req,res)=>{
-        const {species, quantity} = req.body
-        sequelize.query(`insert into species (species, quantity)
-        values ('${species}','${quantity}')
+        const {species, quantity,day_id} = req.body
+
+        sequelize.query(`insert into species (species,quantity,day_id)
+        values ('${species}',${quantity},${day_id})
         returning *;`)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log(err))
 
+    },
+
+    getDaySpecies: (req,res)=>{
+
+        sequelize.query(`select species,quantity from
+        species
+        join day
+        on species.day_id = day.day_id; `)
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch(err => console.log(err))
     }
 
     }

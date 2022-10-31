@@ -14,22 +14,36 @@
     </nav>
     <div id="main">
         <div id="input">
-            <form >
+            <form id="dayForm">
                 <label for=""></label>
-                <input type="text" id="name" placeholder="Name">
+                <input type="text" id="name" placeholder="Name" required>
             
-                <input type="date" id="date" placeholder="Date">
+                <input type="date" id="date" placeholder="Date" required>
                 
-                <input type="text" id="weather" placeholder="Weather">
-                <input type="text" id="location1" placeholder="Location">
-                <input type="text" id="distance" placeholder="Distance">
-                <input type="text" id="duration" placeholder="Duration">
+                <input type="text" id="weather" placeholder="Weather" required>
+                <input type="text" id="location1" placeholder="Location" required>
+                <input type="text" id="distance" placeholder="Distance" required>
+                <input type="text" id="duration" placeholder="Duration" required>
+
                 <button type="submit">Add Day</button>
             </form>
+            <div id="addSpeciesForm" class="hide">
+            <form id="spForm">
+                
+            
+            <input type="number" id="day_id" placeholder="Enter day_id" >
+            <input type="text" id="species" placeholder="Species" >
+            <input type="number" id="quantity" placeholder="#">
+            <button type="submit" class="add">Add Species</button>
+            </form>
+            </div>
 
             
         </div>
-        <div id="days"></div>
+        <div id="days" class="hid">
+            <div id="allDays"></div>
+            <div id="allSpecies"></div>
+        </div>
     </div>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="main.js"></script>

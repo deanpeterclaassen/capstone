@@ -1,7 +1,7 @@
 const express = require('express')
 const cors = require('cors')
 const {seed} = require('./seed')
-const { getHTML,addDay,getDays } = require('./controller')
+const { getHTML,addDay,getDays, addSpecies, getDaySpecies, getSpecificDay} = require('./controller')
 require('dotenv').config()
 const app = express()
 app.use(express.static('public'))
@@ -11,8 +11,10 @@ app.use(cors())
 app.post('/seed',seed)
 app.get('/',getHTML)
 app.get('/days',getDays)
-
+app.get('/daySp', getSpecificDay)
 app.post('/day',addDay)
+app.post('/species',addSpecies)
+app.get('/species',getDaySpecies)
 
 const port = process.env.PORT || 4567
 app.listen(port, console.log(`Server running on ${port}`))
